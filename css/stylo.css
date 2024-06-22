@@ -1,0 +1,153 @@
+
+:root {
+    --clr-bg: hsl(217, 54%, 11%);
+    --clr-card: hsl(216, 50%, 16%);
+    --clr-cyan: hsl(178, 100%, 50%);
+    --clr-soft-blue: hsl(215, 51%, 70%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-line: hsl(215, 32%, 27%);
+    
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+img,
+svg,
+video,
+iframe {
+    max-width: 100%;
+    block-size: auto;
+}
+
+
+
+body {
+    background-color: var(--clr-bg);
+}
+
+.flow > * + * {
+    margin-top: 1rem;
+}
+
+.wrapper {
+    --gap: 3rem;
+    --max-width: 23.4375rem;
+    width: min(100% - var(--gap), var(--max-width));
+    margin-inline: auto;
+    
+}
+.card {
+    background-color: var(--clr-card);
+    margin-block: 3.875rem;
+    border-radius: 0.9375rem;
+
+    
+}
+
+.card__wrapper {
+    max-width: 17.375rem;
+    margin-inline: auto;
+    padding-block: 1.5rem;
+}
+
+.card__img {
+    width: 278px;
+    aspect-ratio: 1;
+    position: relative;
+    background-image: url(../assets/image-equilibrium.jpg);
+    background-size: cover;
+    border-radius: 0.8375rem;
+    transition: opacity 0.3s ease;
+
+  
+}
+
+.card__title {
+    margin-block-start: 1.5rem;
+    color: var(--clr-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card__paragraph {
+   
+    color: var(--clr-soft-blue);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 100;
+}
+
+.card__data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.card__ethereum {
+    color: var(--clr-cyan);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+   
+}
+
+.card__watch {
+    color: var(--clr-soft-blue);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card__line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--clr-line);
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--clr-soft-blue);
+}
+
+.card__footer span {
+    color: var(--clr-white);
+}
+
+.card__footer > img {
+    width: 2.0625rem;
+    aspect-ratio: 1;
+}
+
+@media (min-width:750px) {
+
+    .card__img:hover::after {
+       content: '';
+       position: absolute;
+       inset: 0;
+       border-radius: 0.8375rem;
+      
+      background-image: url(../assets/icon-view.svg);
+      background-repeat: no-repeat;
+      background-position: center center; 
+      background-color: hsl(178 100% 50% / 0.5);
+      opacity: 0.8;
+      
+    }
+
+    .card__text h3:hover, .card__description span:hover {
+        color: var(--clr-cyan);
+    }  
+
+
+}
